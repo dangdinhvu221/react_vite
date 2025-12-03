@@ -3,7 +3,7 @@ import './App.css'
 import './components/lean/todo/todo.css'
 import TodoData from './components/TodoData';
 import TodoNew from './components/ToDoNew';
-
+import ReactLogo from './assets/react.svg';
 const App = () =>{
 
   // Dữ liệu để truyền vào component TodoData
@@ -45,7 +45,10 @@ const App = () =>{
       <div className='todo-container'>
         <div className='todo-title'> Todo List </div>
         <TodoNew addNewTodo={addNewTodo} />
-        <TodoData fullname={fullname} todoLists={todos} onDelete={deleteTodo} />
+        <TodoData fullname={fullname} 
+        todoLists={todos} 
+        reactLogo = {ReactLogo}
+        onDelete={deleteTodo} />
       </div>
     </>
   )

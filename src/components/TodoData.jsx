@@ -2,7 +2,7 @@ import './todo-list.css'
 
 // props là 1 object chứa tất cả các thuộc tính được truyền từ component cha xuống
 const TodoData = (props) => {
-    const { fullname, todoLists, onDelete } = props;
+    const { fullname, todoLists, onDelete, reactLogo } = props;
     console.log(todoLists);
   return (
     <div className="todo-data">
@@ -19,7 +19,12 @@ const TodoData = (props) => {
                 )
             })
         ) : (
-            <div className="todo-empty">Không có công việc nào. Hãy thêm công việc mới!</div>
+            <div className="todo-empty">
+                <span>Không có công việc nào. Hãy thêm công việc mới!</span>
+                <div className='todo-image'>
+                    <img src={reactLogo} alt="react Logo..." className='logo' />
+                </div>
+            </div>
         )}
         {/* <div className="todo-json">{JSON.stringify(todoLists)}</div> */}
     </div>

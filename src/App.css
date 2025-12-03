@@ -6,8 +6,7 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 3em;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -28,8 +27,11 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  /* Apply a smooth spin to any element with class .logo (respecting reduced-motion)
+     Use a faster, subtle rotation that looks nice for a single logo image. */
+  .logo {
+    animation: logo-spin 4s linear infinite;
+    will-change: transform;
   }
 }
 
