@@ -35,12 +35,17 @@ const App = () =>{
     setTodos(prev => [...prev, newTodo]); // Cập nhật lại danh sách todos
   }
 
+  // xóa todo
+  const deleteTodo = (id) => {
+    setTodos(prev => prev.filter(todo => todo.id !== id));
+  }
+
   return (
     <>
       <div className='todo-container'>
         <div className='todo-title'> Todo List </div>
         <TodoNew addNewTodo={addNewTodo} />
-        <TodoData fullname={fullname} todos={todos} />
+        <TodoData fullname={fullname} todoLists={todos} onDelete={deleteTodo} />
       </div>
     </>
   )

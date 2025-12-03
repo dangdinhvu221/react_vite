@@ -1,12 +1,27 @@
+import './todo-list.css'
+
 // props là 1 object chứa tất cả các thuộc tính được truyền từ component cha xuống
-const TodoData = ({ fullname, todos = [] }) => {
+const TodoData = (props) => {
+    const { fullname, todoLists, onDelete } = props;
+    console.log(todoLists);
   return (
     <div className="todo-data">
-        <div style={{ marginBottom: 8 }}>My name is {fullname}</div>
-        {todos.map(item => (
-          <div key={item.id}>{item.name}</div>
-        ))}
-        <div style={{ marginTop: 8 }}>{JSON.stringify(todos)}</div>
+        <div className="fullname-display">My name is {fullname}</div>
+        {/* // Hiển thị fullname truyền từ cha xuống */}
+        {/* // sử dụng map để lặp qua mảng todoLists và hiển thị từng todo */}
+        {todoLists.length > 0 ? (
+            todoLists.map(item => {
+                return (
+                    <div key={item.id} className="todo-item">
+                        <span className="todo-name">{item.name}</span>
+                        <button className="btn-delete" onClick={() => onDelete(item.id)}>Delete</button>
+                    </div>
+                )
+            })
+        ) : (
+            <div className="todo-empty">Không có công việc nào. Hãy thêm công việc mới!</div>
+        )}
+        <div className="todo-json">{JSON.stringify(todoLists)}</div>
     </div>
   )
 }
