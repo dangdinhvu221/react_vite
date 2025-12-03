@@ -1,4 +1,4 @@
-import './todo-list.css'
+import '../../styles/todo-list.css'
 
 // props là 1 object chứa tất cả các thuộc tính được truyền từ component cha xuống
 const TodoData = (props) => {

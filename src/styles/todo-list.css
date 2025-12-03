@@ -1,3 +1,29 @@
+/* logo */
+.logo {
+  height: 3em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* Apply a smooth spin to any element with class .logo (respecting reduced-motion)
+     Use a faster, subtle rotation that looks nice for a single logo image. */
+  .logo {
+    animation: logo-spin 4s linear infinite;
+    will-change: transform;
+  }
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Todo Data Container */
 .todo-data {
   margin-top: 20px;

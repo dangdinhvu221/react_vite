@@ -1,0 +1,52 @@
+/* Footer Styling */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.footer:hover {
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.footer a {
+  color: #06D6A0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 0 8px;
+}
+
+.footer a:hover {
+  color: #04AA6D;
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(6, 214, 160, 0.3);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
