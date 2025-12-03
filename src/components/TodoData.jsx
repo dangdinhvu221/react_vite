@@ -6,7 +6,7 @@ const TodoData = (props) => {
     console.log(todoLists);
   return (
     <div className="todo-data">
-        <div className="fullname-display">My name is {fullname}</div>
+        {/* <div className="fullname-display">My name is {fullname}</div> */}
         {/* // Hiển thị fullname truyền từ cha xuống */}
         {/* // sử dụng map để lặp qua mảng todoLists và hiển thị từng todo */}
         {todoLists.length > 0 ? (
@@ -21,7 +21,7 @@ const TodoData = (props) => {
         ) : (
             <div className="todo-empty">Không có công việc nào. Hãy thêm công việc mới!</div>
         )}
-        <div className="todo-json">{JSON.stringify(todoLists)}</div>
+        {/* <div className="todo-json">{JSON.stringify(todoLists)}</div> */}
     </div>
   )
 }

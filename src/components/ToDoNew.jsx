@@ -18,7 +18,7 @@ const TodoNew = (props) => {
         placeholder="Add new todo"
       />
       <button onClick={handleAdd}>Add</button>
-      <span style={{ marginLeft: 8 }}> My text input is = {text}</span>
+      {/* <span style={{ marginLeft: 8 }}> My text input is = {text}</span> */}
     </div>
   )
 }
