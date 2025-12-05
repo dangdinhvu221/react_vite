@@ -21,4 +21,9 @@ const deleteUserApi = () => {
 
 };
 
-export { createdUserApi, updatedUserApi, deleteUserApi };
+const fetchAllUsersApi = () => {
+    const url_fetchAllUsers = "/api/v1/user";
+    return axios.get(url_fetchAllUsers);
+};
+
+export { createdUserApi, updatedUserApi, deleteUserApi, fetchAllUsersApi };

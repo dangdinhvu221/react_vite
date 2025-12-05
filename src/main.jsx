@@ -41,8 +41,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    {/* <App /> */}
+  //StrictMode disabled to avoid useEffect run twice in dev mode
+  // <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
 );

@@ -41,7 +41,7 @@ const UserForm = () => {
     if (res.data) {
       notification.success({
         message: "User Created Successfully",
-        description: `User ${res.data.data.fullName} has been created.`,
+        description: `User ${res.data.fullname} has been created.`,
         placement: "topRight",
       });
     } else {
