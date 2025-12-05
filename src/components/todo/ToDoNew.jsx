@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../../styles/forms.css';
 
 const TodoNew = (props) => {
     const { addNewTodo } = props;

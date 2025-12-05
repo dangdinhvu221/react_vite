@@ -23,10 +23,10 @@ const headerStyle = () => {
         </li>
         <li>
           <NavLink 
-            to="/products"
+            to="/books"
             className={({ isActive }) => isActive ? 'active' : ''}
           >
-            Products
+            Books
           </NavLink>
         </li>
         <li>
