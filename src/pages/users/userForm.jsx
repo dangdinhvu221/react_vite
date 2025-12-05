@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Form, Input } from "antd";
 import "../../styles/forms.css";
-const MyFormItemContext = React.createContext([]);
+import axios from "axios";
 
+const MyFormItemContext = React.createContext([]);
 function toArr(str) {
   return Array.isArray(str) ? str : [str];
 }
@@ -33,7 +34,6 @@ const UserForm = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [newUser, setNewUser] = React.useState({});
 
   const handleSubmit = () => {
     console.log("<<= check state submit =>>", {
@@ -42,6 +42,17 @@ const UserForm = () => {
       password,
       phone,
     });
+    //axios post user
+    const url_createdUser ="http://localhost:8080/api/v1/user";
+    const dataNewUser = {
+        fullName: fullname, 
+        email: email, 
+        password: password, 
+        phone: phone
+    }
+    // Call API create user
+    axios.post(url_createdUser, dataNewUser);
+
   };
 
   return (
@@ -84,7 +95,7 @@ const UserForm = () => {
             </MyFormItem>
           </MyFormItemGroup>
           <div className="user-form-actions">
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" onClick={() => handleSubmit()}>
               Created User
             </Button>
           </div>
