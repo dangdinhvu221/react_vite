@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, notification } from "antd";
 import "../../styles/forms.css";
-import axios from "axios";
+import { createdUserApi } from "../../services/api.service";
 
 const MyFormItemContext = React.createContext([]);
 function toArr(str) {
@@ -35,24 +35,22 @@ const UserForm = () => {
   const [password, setPassword] = React.useState("");
   const [phone, setPhone] = React.useState("");
 
-  const handleSubmit = () => {
-    console.log("<<= check state submit =>>", {
-      fullname,
-      email,
-      password,
-      phone,
-    });
-    //axios post user
-    const url_createdUser ="http://localhost:8080/api/v1/user";
-    const dataNewUser = {
-        fullName: fullname, 
-        email: email, 
-        password: password, 
-        phone: phone
-    }
+  const handleSubmit = async () => {
     // Call API create user
-    axios.post(url_createdUser, dataNewUser);
-
+    const res = await createdUserApi(fullname, email, phone, password);
+    if (res.data) {
+      notification.success({
+        message: "User Created Successfully",
+        description: `User ${res.data.data.fullName} has been created.`,
+        placement: "topRight",
+      });
+    } else {
+      notification.error({
+        message: "Error created User: >>",
+        description: JSON.stringify(res.message),
+        placement: "topRight",
+      });
+    }
   };
 
   return (
@@ -95,7 +93,11 @@ const UserForm = () => {
             </MyFormItem>
           </MyFormItemGroup>
           <div className="user-form-actions">
-            <Button type="primary" htmlType="submit" onClick={() => handleSubmit()}>
+            <Button
+              type="primary"
+              htmlType="submit"
+              onClick={() => handleSubmit()}
+            >
               Created User
             </Button>
           </div>
